@@ -23,13 +23,18 @@ namespace Snake_Ladder
 
                 {
                     case For_Ladder:
-                        start += diceRoll;
                         Console.WriteLine("Player moves forward");
+                        if (start + diceRoll <= 100)
+                            start += diceRoll;
+                        else
+                            start = start + 0;
                         break;
 
                     case For_Snake:
-                        start -= diceRoll;
                         Console.WriteLine("Player moves back");
+                        start -= diceRoll;
+                        if (start < 0)
+                            start = 0;
                         break;
 
                     default:
@@ -38,8 +43,11 @@ namespace Snake_Ladder
                 }
                 Console.WriteLine("Present point :" + start);
 
+
             }
+
             Console.WriteLine("Winning point :" + start);
         }
     }
 }
+

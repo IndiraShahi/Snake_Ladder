@@ -14,25 +14,32 @@ namespace Snake_Ladder
 
             Console.WriteLine("Start position of player is : " + start);
             Random dice = new Random();
-            int diceRoll = dice.Next(1, 7);
-            Console.WriteLine("Player dice number is  : " + diceRoll);
-            int SnakeOrLadder = dice.Next(0, 3);
-            switch (SnakeOrLadder)
+            while (start != 100)
             {
-                case For_Ladder:
-                    start += diceRoll;
-                    Console.WriteLine("Player moves forward");
-                    break;
+                int diceRoll = dice.Next(1, 7);
+                Console.WriteLine("Player dice number is  : " + diceRoll);
+                int SnakeOrLadder = dice.Next(0, 3);
+                switch (SnakeOrLadder)
 
-                case For_Snake:
-                    start -= diceRoll;
-                    Console.WriteLine("Player moves back");
-                    break;
+                {
+                    case For_Ladder:
+                        start += diceRoll;
+                        Console.WriteLine("Player moves forward");
+                        break;
 
-                default:
-                    Console.WriteLine("No Play");
-                    break;
+                    case For_Snake:
+                        start -= diceRoll;
+                        Console.WriteLine("Player moves back");
+                        break;
+
+                    default:
+                        Console.WriteLine("No Play");
+                        break;
+                }
+                Console.WriteLine("Present point :" + start);
+
             }
+            Console.WriteLine("Winning point :" + start);
         }
     }
 }

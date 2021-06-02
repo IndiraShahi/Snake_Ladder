@@ -11,6 +11,7 @@ namespace Snake_Ladder
             int start = 0;
             const int For_Ladder = 1;
             const int For_Snake = 2;
+            int TotalDiceRoll = 0;
 
             Console.WriteLine("Start position of player is : " + start);
             Random dice = new Random();
@@ -42,10 +43,10 @@ namespace Snake_Ladder
                         break;
                 }
                 Console.WriteLine("Present point :" + start);
-
+                TotalDiceRoll += 1;
 
             }
-
+            Console.WriteLine("Total number of dice rolled :" + TotalDiceRoll);
             Console.WriteLine("Winning point :" + start);
         }
     }
